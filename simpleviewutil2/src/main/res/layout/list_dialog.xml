@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/shape_half_corners_whitebg">
+    
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="12dp"
+        android:visibility="gone"
+        android:paddingTop="12dp"
+        android:paddingLeft="12dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#000000"
+            android:layout_centerVertical="true"/>
+        
+        <ImageView
+            android:id="@+id/imageView_close1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:padding="3dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_close_address"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@id/imageView_close1"
+            android:layout_marginTop="12dp"
+            android:background="@color/light_line"/>
+
+    </RelativeLayout>
+
+    <com.songcream.simpleviewutil2.view.MaxHeightRecyclerView
+        android:id="@+id/maxHeightRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:maxHeight="300dp"
+        android:overScrollMode="never"/>
+
+</LinearLayout>

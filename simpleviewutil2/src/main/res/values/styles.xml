@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--自定义dialog背景全透明无边框theme -->
+    <style name="BaseDialog" parent="android:style/Theme.Dialog">
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+
+        <item name="android:background">@null</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">stateAlwaysHidden</item>
+    </style>
+
+    <style name="DialogAnimBtT">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+    <style name="DialogAnimAlpha">
+        <item name="android:windowEnterAnimation">@anim/dialog_alpha_in</item>
+    </style>
+
+    <style name="DialogAnimRtL">
+        <item name="android:windowEnterAnimation">@anim/dialog_right_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_right_out</item>
+    </style>
+
+    <style name="TransparentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize|screenLayout</item>
+        <item name="android:screenOrientation">portrait</item>
+    </style>
+
+</resources>
