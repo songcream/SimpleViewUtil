@@ -47,4 +47,4 @@ EmptyView.initDefault(int loadingDrawable,int emptySrc,String emptyString,int er
 ```java
 emptyView.showEmptyView(int src, String content);
 ```
-![image](https://github.com/songcream/SimpleViewUtil/app/pic/Snipaste_2020-05-10_17-06-19.png)
+![image](https://github.com/songcream/SimpleViewUtil/blob/master/app/pic/Snipaste_2020-05-10_17-06-19.png)
