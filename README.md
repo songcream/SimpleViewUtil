@@ -19,7 +19,7 @@ allprojects {
 在使用的module的build.gradle中添加
 ```
 dependencies {
-	  implementation 'com.github.songcream:SimpleViewUtil:1.0.0'
+	  implementation 'com.github.songcream:SimpleViewUtil:1.0.1'
 }
 ```
 
