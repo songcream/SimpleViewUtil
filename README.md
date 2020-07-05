@@ -23,7 +23,7 @@ dependencies {
 }
 ```
 
-项目包含的简单使用的view有：
+项目包含的简单使用的view有：EmptyView、SmartRefreshLayout、BaseDialog、ListDialog、MaxHeightRecyclerView、ShadowLayout、SearchEditText
 ## EmptyView
 EmptyView 可以很轻松的实现空布局或者错误提示布局，使用方法仅仅只需要调用attach方法，将这个view绑定到加载不出内容需要显示空布局的View上，并且可以自定义空布局图标、标题，另一个实用的就是实现加载布局，页面刚进来没有数据时，可以一句话实现加载动画。使用方法如下：
 ##### 实现加载布局
