@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editText_activitySearch_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_search_darkgray"
+        android:hint="输入股票代码、名称"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        android:paddingLeft="30dp"
+        android:singleLine="true"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="11.7dp"
+        android:layout_height="11.65dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/sousuo1" />
+
+    <ImageView
+        android:id="@+id/imageView_editText_delete"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/guanbi3" />
+
+</RelativeLayout>
