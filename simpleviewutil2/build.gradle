@@ -38,6 +38,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" //经典刷新头
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }
 repositories {
     mavenCentral()
