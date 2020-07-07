@@ -29,7 +29,7 @@ public class EmptyView extends RelativeLayout {
     private static int animDefLoading =R.drawable.logo_loading;
     private static int srcDefaultNetError =R.drawable.net_error;
     private static AnimationDrawable animationDrawable;
-    private boolean useDrawableAnimation =false;
+    private boolean useDrawableAnimation =true;
 
     public static void initDefault(int loadingDrawable,int emptySrc,String emptyString,int errorSrc){
         srcDefNoData =emptySrc;
