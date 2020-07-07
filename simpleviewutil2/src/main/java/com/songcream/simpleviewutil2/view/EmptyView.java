@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 import com.songcream.simpleviewutil2.R;
 
@@ -21,12 +22,14 @@ public class EmptyView extends RelativeLayout {
     public ImageView imageViewSrc;
     public TextView textViewContent,btnAction;
     public ImageView imageViewLoading;
+    private SpinKitView spinKitView;
     private View attachView;
     private static int srcDefNoData =R.drawable.no_data;
     private static String strDefNoData = "暂无数据";
     private static int animDefLoading =R.drawable.logo_loading;
     private static int srcDefaultNetError =R.drawable.net_error;
     private static AnimationDrawable animationDrawable;
+    private boolean useDrawableAnimation =false;
 
     public static void initDefault(int loadingDrawable,int emptySrc,String emptyString,int errorSrc){
         srcDefNoData =emptySrc;
@@ -61,6 +64,7 @@ public class EmptyView extends RelativeLayout {
         textViewContent=findViewById(R.id.textView_emptyView_text);
         imageViewLoading=findViewById(R.id.imageView_emptyView_loading);
         btnAction = findViewById(R.id.btn_action);
+        spinKitView=findViewById(R.id.spinKitView);
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -69,6 +73,7 @@ public class EmptyView extends RelativeLayout {
         textViewContent=findViewById(R.id.textView_emptyView_text);
         imageViewLoading=findViewById(R.id.imageView_emptyView_loading);
         btnAction = findViewById(R.id.btn_action);
+        spinKitView=findViewById(R.id.spinKitView);
     }
 
     public void attachView(View view){
@@ -114,6 +119,7 @@ public class EmptyView extends RelativeLayout {
             attachView.setVisibility(INVISIBLE);
             this.setVisibility(VISIBLE);
         }
+        spinKitView.setVisibility(INVISIBLE);
         imageViewLoading.setVisibility(INVISIBLE);
         imageViewSrc.setVisibility(VISIBLE);
         textViewContent.setVisibility(VISIBLE);
@@ -134,6 +140,7 @@ public class EmptyView extends RelativeLayout {
             attachView.setVisibility(INVISIBLE);
             this.setVisibility(VISIBLE);
         }
+        spinKitView.setVisibility(INVISIBLE);
         imageViewLoading.setVisibility(INVISIBLE);
         imageViewSrc.setVisibility(VISIBLE);
         textViewContent.setVisibility(VISIBLE);
@@ -154,13 +161,16 @@ public class EmptyView extends RelativeLayout {
             attachView.setVisibility(INVISIBLE);
             this.setVisibility(VISIBLE);
         }
-        imageViewLoading.setVisibility(VISIBLE);
+        if(useDrawableAnimation){
+            imageViewLoading.setVisibility(VISIBLE);
+            if(animationDrawable==null) animationDrawable= (AnimationDrawable) getResources().getDrawable(animDefLoading);
+            imageViewLoading.setImageDrawable(animationDrawable);
+            animationDrawable.start();
+        }else{
+            spinKitView.setVisibility(VISIBLE);
+        }
         imageViewSrc.setVisibility(INVISIBLE);
         textViewContent.setVisibility(INVISIBLE);
-
-        if(animationDrawable==null) animationDrawable= (AnimationDrawable) getResources().getDrawable(animDefLoading);
-        imageViewLoading.setImageDrawable(animationDrawable);
-        animationDrawable.start();
     }
 
     public void showEmptyView(){
@@ -168,6 +178,7 @@ public class EmptyView extends RelativeLayout {
             attachView.setVisibility(INVISIBLE);
             this.setVisibility(VISIBLE);
         }
+        spinKitView.setVisibility(INVISIBLE);
         imageViewLoading.setVisibility(INVISIBLE);
         imageViewSrc.setImageResource(srcDefNoData);//恢复默认
         imageViewSrc.setVisibility(VISIBLE);
@@ -203,6 +214,18 @@ public class EmptyView extends RelativeLayout {
             this.setVisibility(INVISIBLE);
         }
         if(animationDrawable!=null) animationDrawable.stop();
+    }
+
+    public boolean isUseDrawableAnimation() {
+        return useDrawableAnimation;
+    }
+
+    public void setUseDrawableAnimation(boolean useDrawableAnimation) {
+        this.useDrawableAnimation = useDrawableAnimation;
+    }
+
+    public SpinKitView getSpinKitView() {
+        return spinKitView;
     }
 
     private class EmptyViewParent extends RelativeLayout {
